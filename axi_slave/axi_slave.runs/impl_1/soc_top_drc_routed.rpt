@@ -1,0 +1,388 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Mon Jan 17 16:22:58 2022
+| Host         : Mongoose_Razer running 64-bit major release  (build 9200)
+| Command      : report_drc -file soc_top_drc_routed.rpt -pb soc_top_drc_routed.pb -rpx soc_top_drc_routed.rpx
+| Design       : soc_top
+| Device       : xc7a100tcsg324-2
+| Speed File   : -2
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_soc_top
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 68
++-----------+----------+--------------------------------------+------------+
+| Rule      | Severity | Description                          | Violations |
++-----------+----------+--------------------------------------+------------+
+| CFGBVS-7  | Warning  | CONFIG_VOLTAGE with Config Bank VCCO | 1          |
+| CHECK-3   | Warning  | Report rule limit reached            | 1          |
+| PLCK-12   | Warning  | Clock Placer Checks                  | 1          |
+| REQP-1839 | Warning  | RAMB36 async control check           | 20         |
+| RPBF-3    | Warning  | IO port buffering is incomplete      | 41         |
+| RTSTAT-10 | Warning  | No routable loads                    | 1          |
+| REQP-181  | Advisory | writefirst                           | 3          |
++-----------+----------+--------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CFGBVS-7#1 Warning
+CONFIG_VOLTAGE with Config Bank VCCO  
+The CONFIG_MODE property of current_design specifies a configuration mode (SPIx4) that uses pins in bank 14.  I/O standards used in this bank have a voltage requirement of 3.30.  However, the CONFIG_VOLTAGE for current_design is set to 1.8. If you're using any config pins in this bank, ensure that your configuration voltage is compatible with the I/O standards in banks used by your configuration mode.  Refer to device configuration user guide for more information.    Pins used by config mode: K17 (IO_L1P_T0_D00_MOSI_14), K18 (IO_L1N_T0_D01_DIN_14), L14 (IO_L2P_T0_D02_14), M14 (IO_L2N_T0_D03_14), L15 (IO_L3P_T0_DQS_PUDC_B_14), and L13 (IO_L6P_T0_FCS_B_14)
+Related violations: <none>
+
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1839 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+PLCK-12#1 Warning
+Clock Placer Checks  
+Poor placement for routing between an IO pin and BUFG. 
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+ This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	u_axi_bus_m32_bridge_0/FPGA_PAD_IBUF[35]_inst (IBUF.O) is locked to U3
+	u_axi_bus_m32_bridge_0/FPGA_PAD_IBUF_BUFG[35]_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y2
+
+Related violations: <none>
+
+REQP-1839#1 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ADDRARDADDR[6] (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/addrb[0]) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ADDRARDADDR[7] (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/addrb[1]) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ADDRARDADDR[8] (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/addrb[2]) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#4 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ADDRBWRADDR[6] (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/addra[0]) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_WPTR/WADDR_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#5 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ADDRBWRADDR[7] (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/addra[1]) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_WPTR/WADDR_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#6 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ADDRBWRADDR[8] (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/addra[2]) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_WPTR/WADDR_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#7 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_REMPTY_SCALAFIFO_to_ASFIFO_0/LAST_DATA_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#8 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_REMPTY_SCALAFIFO_to_ASFIFO_0/SCALAFIFO_REMPTY_DLY_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#9 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#10 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#11 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#12 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#13 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/axim_awvalid_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#14 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/rcmd_vld_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#15 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/wcmd_vld_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#16 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/wcmd_vld_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#17 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/wdq1_vld_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#18 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/wsram_wptr_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#19 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/wsram_wptr_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#20 Warning
+RAMB36 async control check  
+The RAMB36E1 u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram has an input control pin u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram/ENARDEN (net: u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/DP8X72_0/enb) which is driven by a register (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpus_ctrl_0/rd_dqvld_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+RPBF-3#1 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[0] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#2 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[10] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#3 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[11] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#4 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[12] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#5 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[13] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#6 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[14] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#7 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[15] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#8 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[16] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#9 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[17] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#10 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[18] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#11 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[19] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#12 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[1] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#13 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[23] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#14 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[24] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#15 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[25] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#16 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[26] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#17 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[27] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#18 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[28] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#19 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[29] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#20 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[2] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#21 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[30] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#22 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[31] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#23 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[32] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#24 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[33] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#25 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[34] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#26 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[35] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#27 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[36] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#28 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[37] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#29 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[38] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#30 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[39] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#31 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[3] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#32 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[40] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#33 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[41] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#34 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[42] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#35 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[43] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#36 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[4] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#37 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[5] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#38 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[6] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#39 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[7] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#40 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[8] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#41 Warning
+IO port buffering is incomplete  
+Device port FPGA_PAD[9] expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+55 net(s) have no routable loads. The problem bus(es) and/or net(s) are u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow (the first 15 of 53 listed).
+Related violations: <none>
+
+REQP-181#1 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/U_s2p_ram128x64/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-181#2 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_wdata_buf_0/U_s2p_ram64x72/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-181#3 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpus_ctrl_0/u_wdata_buf_0/U_s2p_ram64x64/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/v6_noinit.ram/NO_BMM_INFO.SDP.WIDE_PRIM36.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+

@@ -1,0 +1,621 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Mon Jan 17 16:23:08 2022
+| Host         : Mongoose_Razer running 64-bit major release  (build 9200)
+| Command      : report_methodology -file soc_top_methodology_drc_routed.rpt -pb soc_top_methodology_drc_routed.pb -rpx soc_top_methodology_drc_routed.rpx
+| Design       : soc_top
+| Device       : xc7a100tcsg324-2
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_soc_top
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 115
++-----------+----------+--------------------------------------------------------+------------+
+| Rule      | Severity | Description                                            | Violations |
++-----------+----------+--------------------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                           | 36         |
+| PDRC-190  | Warning  | Suboptimally placed synchronized register chain        | 10         |
+| TIMING-10 | Warning  | Missing property on synchronizer                       | 1          |
+| TIMING-13 | Warning  | Timing paths ignored due to path segmentation          | 4          |
+| TIMING-18 | Warning  | Missing input or output delay                          | 44         |
+| TIMING-28 | Warning  | Auto-derived clock referenced by a timing constraint   | 18         |
+| XDCC-1    | Warning  | Scoped Clock constraint overwritten with the same name | 1          |
+| XDCC-7    | Warning  | Scoped Clock constraint overwritten on the same source | 1          |
++-----------+----------+--------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/ngwrdrst.grst.g7serrst.wr_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[0]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[1]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[1]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/ngwrdrst.grst.g7serrst.wr_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[0]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[1]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTDO_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[10]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[11]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[13]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[14]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[15]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[6]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[7]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[8]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[9]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#6 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gc0.count_d1[4]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[2]/CLR (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#7 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/S_AXI_AREADY_I_i_2__2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#8 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gc0.count_d1[4]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[2]/CLR (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#9 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gc0.count_d1[4]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.first_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[2]/CLR (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#10 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gc0.count_d1[4]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.curr_fwft_state_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_fb_i_reg/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i_reg/PRE (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#11 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gc0.count_d1[4]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[2]/CLR (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#12 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/gc0.count_d1[4]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i_reg/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_reg[0]/PRE, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_axi_dwidth_converter_s64m32_0/inst/gen_downsizer.gen_cascaded_downsizer.gen_axi3_conv.axi3_conv_inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_reg[2]/CLR (the first 15 of 32 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#13 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_pkt_0/i___11, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/a_reset_d_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/sft_rst_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/sft_set_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[10]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[11]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[14]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[15]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cpum_ctrl_0/u_rdata_buf_0/BYPASS_reg[18]/CLR (the first 15 of 5456 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#14 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RBIN_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RBIN_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RBIN_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RBIN_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RDEPTH_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RPTR_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RPTR_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/RPTR_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_RPTR/WPTR_SYN1_reg[0]/CLR (the first 15 of 43 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#15 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_WPTR/WPTR_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_WPTR/WPTR_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_rx2sys_0/I_SCALAFIFO_0/U_WPTR/WPTR_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[10]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[11]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[14]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[15]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[19]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wdata_reg[1]/CLR (the first 15 of 76 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#16 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_sys2tx_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_sys2tx_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_cdc_0/I_async_fifo_sys2tx_0/I_SCALAFIFO_0/U_RPTR/RADDR_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_run_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#17 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/afifo_wr_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_cnt2_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_cnt2_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[10]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[11]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[14]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[15]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[19]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[1]/CLR (the first 15 of 114 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#18 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_cnt_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_cnt_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_cnt_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_cnt_reg[3]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_cnt_reg[4]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_cnt_reg[5]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_cnt_reg[6]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_done_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_fail_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_run_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/bts_1byte_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/bts_end_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/cmd_loc_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/cmd_loc_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/cmd_loc_reg[3]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#19 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[20]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[22]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[24]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[25]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[28]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[29]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[32]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[34]/CLR (the first 15 of 101 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#20 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[56]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[57]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[58]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[59]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[60]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[61]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data0_reg[62]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[48]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[50]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[53]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[54]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[56]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[58]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[61]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[62]/CLR (the first 15 of 101 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#21 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[19]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[21]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[23]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[24]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[25]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[28]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[29]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[32]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/btchk_data1_reg[33]/CLR (the first 15 of 101 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#22 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp0_reg[71]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[10]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[11]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[14]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[15]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[19]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[20]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp2_reg[21]/CLR (the first 15 of 114 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#23 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[10]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[11]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[14]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[15]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[19]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[20]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[3]/CLR (the first 15 of 114 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#24 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[21]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[22]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[23]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[24]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[25]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[26]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[27]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[28]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[29]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[30]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[31]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[32]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[33]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[34]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[35]/CLR (the first 15 of 114 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#25 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[50]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[51]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[52]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[53]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[54]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[55]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[56]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[57]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[58]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[59]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[60]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[61]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[62]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[63]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp1_reg[50]/CLR (the first 15 of 114 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#26 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/u_rx_fifo_0/BYPASS_reg[64]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp1_reg[64]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/data_tmp3_reg[64]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_rx_ctrl_0/mem_wdata_reg[64]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#27 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[20]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[22]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[24]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[25]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[28]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[29]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[32]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data0_reg[34]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#28 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[19]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[21]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[23]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[24]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[25]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[28]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[29]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[32]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data1_reg[33]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#29 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[0]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[20]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[22]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[24]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[25]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[28]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[29]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[2]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[32]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/btchk_data2_reg[34]/CLR (the first 15 of 69 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#30 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[10]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[11]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[12]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[13]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[14]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[15]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[16]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[17]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[18]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[19]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[1]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[20]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[21]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[22]/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_core_0/u_tx_ctrl_0/data_buf_reg[23]/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#31 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_3/dflop1/sft_rst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD0/rgst_1n_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD0/rgst_1p_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD0/rxdn_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD0/rxdp_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD3/rgst_1n_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD3/rgst_1p_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD3/rxdn_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD1/rgst_1n_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD1/rgst_1p_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD1/rxdn_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD1/rxdp_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD10/rgst_1p_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD10/rxdp_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD11/rgst_1p_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_macro_wrap_0/u_sftpad_0/IOPAD_V_ALL0/U_DATAPAD11/rxdp_reg/CLR (the first 15 of 99 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#32 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_0/ff1/q_i_1__2, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_1/ff0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_1/ff1/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#33 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_1/ff1/q_i_1__3, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_2/ff0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_2/ff1/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#34 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_rst_sync_0/ff1/q_i_1__4, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_0/ff0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_fbio_0/u_rst_gen_0/u_rst_sync_0/ff1/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#35 Warning
+LUT drives async reset alert  
+LUT cell u_axi_bus_m32_bridge_0/u_rst_sync_0/ff1/q_i_1__4, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_bus_m32_bridge_0/u_rst_sync_0/ff0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_rst_sync_0/ff1/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_0/ff0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_0/ff1/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_1/ff0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_1/ff1/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_2/ff0/q_reg/CLR, u_axi_bus_m32_bridge_0/u_fbio_0/u_rst_sync_2/ff1/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#36 Warning
+LUT drives async reset alert  
+LUT cell u_axi_slave/int_b_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_axi_slave/axis_arready_reg/CLR, u_axi_slave/axis_awready_reg/CLR, u_axi_slave/axis_bvalid_reg/CLR, u_axi_slave/axis_rdata_reg[0]/CLR, u_axi_slave/axis_rdata_reg[10]/CLR, u_axi_slave/axis_rdata_reg[11]/CLR, u_axi_slave/axis_rdata_reg[12]/CLR, u_axi_slave/axis_rdata_reg[13]/CLR, u_axi_slave/axis_rdata_reg[14]/CLR, u_axi_slave/axis_rdata_reg[15]/CLR, u_axi_slave/axis_rdata_reg[16]/CLR, u_axi_slave/axis_rdata_reg[17]/CLR, u_axi_slave/axis_rdata_reg[18]/CLR, u_axi_slave/axis_rdata_reg[19]/CLR, u_axi_slave/axis_rdata_reg[1]/CLR (the first 15 of 167 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+PDRC-190#1 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X18Y34 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#2 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X19Y35 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#3 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X18Y36 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#4 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[3] in site SLICE_X17Y36 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[3] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#5 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X17Y33 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#6 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X19Y33 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#7 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X21Y35 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#8 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X23Y30 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#9 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X22Y32 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+PDRC-190#10 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X23Y32 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+Related violations: <none>
+
+TIMING-10#1 Warning
+Missing property on synchronizer  
+One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
+Related violations: <none>
+
+TIMING-13#1 Warning
+Timing paths ignored due to path segmentation  
+Some timing paths are not reported due to path segmentation on pin(s) u_clk_gen_0/inst/mmcm_adv_inst/CLKFBOUT. To prevent path segmentation, all the Min and Max delay constraints should be defined with a list of valid startpoints and endpoints
+Related violations: <none>
+
+TIMING-13#2 Warning
+Timing paths ignored due to path segmentation  
+Some timing paths are not reported due to path segmentation on pin(s) u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT0. To prevent path segmentation, all the Min and Max delay constraints should be defined with a list of valid startpoints and endpoints
+Related violations: <none>
+
+TIMING-13#3 Warning
+Timing paths ignored due to path segmentation  
+Some timing paths are not reported due to path segmentation on pin(s) u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT1. To prevent path segmentation, all the Min and Max delay constraints should be defined with a list of valid startpoints and endpoints
+Related violations: <none>
+
+TIMING-13#4 Warning
+Timing paths ignored due to path segmentation  
+Some timing paths are not reported due to path segmentation on pin(s) u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT2. To prevent path segmentation, all the Min and Max delay constraints should be defined with a list of valid startpoints and endpoints
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[0] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[10] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[11] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[12] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[13] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[14] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[15] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[16] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[17] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[18] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[19] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[1] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[20] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[21] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[22] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[23] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[24] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[25] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[26] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[27] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[28] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[29] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#23 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[2] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#24 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[30] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#25 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[31] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#26 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[32] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#27 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[33] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#28 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[34] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#29 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[35] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#30 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[36] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#31 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[37] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#32 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[38] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#33 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[39] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#34 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[3] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#35 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[40] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#36 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[41] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#37 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[42] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#38 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[43] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#39 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[4] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#40 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[5] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#41 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[6] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#42 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[7] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#43 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[8] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-18#44 Warning
+Missing input or output delay  
+An input delay is missing on FPGA_PAD[9] relative to clock(s) rclk
+Related violations: <none>
+
+TIMING-28#1 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_pll0 is referenced by name inside timing constraint (see constraint position 10 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#2 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_pll0 is referenced by name inside timing constraint (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#3 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_pll0 is referenced by name inside timing constraint (see constraint position 16 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#4 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_pll0 is referenced by name inside timing constraint (see constraint position 5 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#5 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_pll0 is referenced by name inside timing constraint (see constraint position 6 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#6 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_pll0 is referenced by name inside timing constraint (see constraint position 9 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#7 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out2_pll0 is referenced by name inside timing constraint (see constraint position 10 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT1]
+Related violations: <none>
+
+TIMING-28#8 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out2_pll0 is referenced by name inside timing constraint (see constraint position 11 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT1]
+Related violations: <none>
+
+TIMING-28#9 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out2_pll0 is referenced by name inside timing constraint (see constraint position 12 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT1]
+Related violations: <none>
+
+TIMING-28#10 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out2_pll0 is referenced by name inside timing constraint (see constraint position 7 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT1]
+Related violations: <none>
+
+TIMING-28#11 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out2_pll0 is referenced by name inside timing constraint (see constraint position 8 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT1]
+Related violations: <none>
+
+TIMING-28#12 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out2_pll0 is referenced by name inside timing constraint (see constraint position 9 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT1]
+Related violations: <none>
+
+TIMING-28#13 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out3_pll0 is referenced by name inside timing constraint (see constraint position 13 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT2]
+Related violations: <none>
+
+TIMING-28#14 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out3_pll0 is referenced by name inside timing constraint (see constraint position 14 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT2]
+Related violations: <none>
+
+TIMING-28#15 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out3_pll0 is referenced by name inside timing constraint (see constraint position 5 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT2]
+Related violations: <none>
+
+TIMING-28#16 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out3_pll0 is referenced by name inside timing constraint (see constraint position 6 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT2]
+Related violations: <none>
+
+TIMING-28#17 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out3_pll0 is referenced by name inside timing constraint (see constraint position 7 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT2]
+Related violations: <none>
+
+TIMING-28#18 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out3_pll0 is referenced by name inside timing constraint (see constraint position 8 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins u_clk_gen_0/inst/mmcm_adv_inst/CLKOUT2]
+Related violations: <none>
+
+XDCC-1#1 Warning
+Scoped Clock constraint overwritten with the same name  
+A new clock constraint create_clock overrides a previous scoped clock constraint with the same name. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_clock -period 40.000 -name GCLK -waveform {0.000 20.000} [get_ports GCLK] (Source: C:/Users/smn90/Desktop/axi_slave_soc/src/soc_top.xdc (Line: 2))
+Previous: create_clock -period 40.000 [get_ports GCLK] (Source: c:/Users/smn90/Desktop/axi_slave_soc/pll0/pll0.xdc (Line: 56))
+Related violations: <none>
+
+XDCC-7#1 Warning
+Scoped Clock constraint overwritten on the same source  
+A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_clock -period 40.000 -name GCLK -waveform {0.000 20.000} [get_ports GCLK] (Source: C:/Users/smn90/Desktop/axi_slave_soc/src/soc_top.xdc (Line: 2))
+Previous: create_clock -period 40.000 [get_ports GCLK] (Source: c:/Users/smn90/Desktop/axi_slave_soc/pll0/pll0.xdc (Line: 56))
+Related violations: <none>
+
+

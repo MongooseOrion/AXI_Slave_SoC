@@ -1,0 +1,5 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+======I am after locked here =================
+======I am  finish here =================
+$finish called at time : 33287161 ps : File "C:/Users/smn90/Desktop/axi_slave_soc/sim/sim_top.v" Line 66

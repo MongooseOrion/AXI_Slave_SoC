@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/smn90/Desktop/axi_slave_soc/pll0/pll0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pll0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/smn90/Desktop/axi_slave_soc/pll0/pll0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pll0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/smn90/Desktop/axi_slave_soc/src/axi_bus_m32_bridge.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axi_bus_m32_bridge
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/smn90/Desktop/axi_slave_soc/src/axi_slave.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axi_slave
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/smn90/Desktop/axi_slave_soc/src/soc_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/smn90/Desktop/axi_slave_soc/sim/sim_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/smn90/Desktop/axi_slave_soc/axi_slave/axi_slave.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

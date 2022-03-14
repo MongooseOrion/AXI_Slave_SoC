@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Jan 17 10:18:26 2022
+# Process ID: 772
+# Current directory: C:/Users/smn90/Desktop/axi_slave_soc/axi_slave/axi_slave.runs/synth_1
+# Command line: vivado.exe -log soc_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_top.tcl
+# Log file: C:/Users/smn90/Desktop/axi_slave_soc/axi_slave/axi_slave.runs/synth_1/soc_top.vds
+# Journal file: C:/Users/smn90/Desktop/axi_slave_soc/axi_slave/axi_slave.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source soc_top.tcl -notrace

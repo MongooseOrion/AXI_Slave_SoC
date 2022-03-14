@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../pll0" \
+"../../../../../pll0/pll0_clk_wiz.v" \
+"../../../../../pll0/pll0.v" \
+"../../../../../src/axi_bus_m32_bridge.v" \
+"../../../../../src/axi_slave.v" \
+"../../../../../src/soc_top.v" \
+"../../../../../sim/sim_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2019.1 (64-bit)                     -->
+<!--                                                              -->
+<!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.        -->
+
+<hwsession version="1" minor="2">
+  <device name="xc7a100t_0" gui_info="dashboard1=hw_ila_1[xc7a100t_0/hw_ila_1/Settings=ILA_SETTINGS_1;xc7a100t_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7a100t_0/hw_ila_1/Status=ILA_STATUS_1;xc7a100t_0/hw_ila_1/Waveform=ILA_WAVE_1;]"/>
+  <ObjectList object_type="hw_device" gui_info="">
+    <Object name="xc7a100t_0" gui_info="">
+      <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/soc_top.ltx"/>
+      <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/soc_top.ltx"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/soc_top.bit"/>
+      <Properties Property="SLR.COUNT" value="1"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="u_ila_0" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_probe" gui_info="">
+    <Object name="axim32_araddr[27:0]" gui_info="Trigger Setup=0"/>
+    <Object name="axim32_awaddr[27:0]" gui_info="Trigger Setup=1"/>
+    <Object name="axim32_awready" gui_info="Trigger Setup=2"/>
+    <Object name="axim32_awvalid" gui_info="Trigger Setup=3"/>
+    <Object name="axim32_rdata[31:0]" gui_info="Trigger Setup=4"/>
+    <Object name="axim32_rready" gui_info="Trigger Setup=5"/>
+    <Object name="axim32_rvalid" gui_info="Trigger Setup=6"/>
+    <Object name="axim32_wdata[31:0]" gui_info="Trigger Setup=7"/>
+    <Object name="axim32_wready" gui_info="Trigger Setup=8"/>
+    <Object name="axim32_wvalid" gui_info="Trigger Setup=9"/>
+  </ObjectList>
+  <probeset name="hw project" active="false">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq28&apos;hXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq28&apos;hXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe3[27:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq28&apos;hXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_araddr[27]"/>
+        <net name="axim32_araddr[26]"/>
+        <net name="axim32_araddr[25]"/>
+        <net name="axim32_araddr[24]"/>
+        <net name="axim32_araddr[23]"/>
+        <net name="axim32_araddr[22]"/>
+        <net name="axim32_araddr[21]"/>
+        <net name="axim32_araddr[20]"/>
+        <net name="axim32_araddr[19]"/>
+        <net name="axim32_araddr[18]"/>
+        <net name="axim32_araddr[17]"/>
+        <net name="axim32_araddr[16]"/>
+        <net name="axim32_araddr[15]"/>
+        <net name="axim32_araddr[14]"/>
+        <net name="axim32_araddr[13]"/>
+        <net name="axim32_araddr[12]"/>
+        <net name="axim32_araddr[11]"/>
+        <net name="axim32_araddr[10]"/>
+        <net name="axim32_araddr[9]"/>
+        <net name="axim32_araddr[8]"/>
+        <net name="axim32_araddr[7]"/>
+        <net name="axim32_araddr[6]"/>
+        <net name="axim32_araddr[5]"/>
+        <net name="axim32_araddr[4]"/>
+        <net name="axim32_araddr[3]"/>
+        <net name="axim32_araddr[2]"/>
+        <net name="axim32_araddr[1]"/>
+        <net name="axim32_araddr[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq28&apos;hXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq28&apos;hXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[27:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq28&apos;hXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_awaddr[27]"/>
+        <net name="axim32_awaddr[26]"/>
+        <net name="axim32_awaddr[25]"/>
+        <net name="axim32_awaddr[24]"/>
+        <net name="axim32_awaddr[23]"/>
+        <net name="axim32_awaddr[22]"/>
+        <net name="axim32_awaddr[21]"/>
+        <net name="axim32_awaddr[20]"/>
+        <net name="axim32_awaddr[19]"/>
+        <net name="axim32_awaddr[18]"/>
+        <net name="axim32_awaddr[17]"/>
+        <net name="axim32_awaddr[16]"/>
+        <net name="axim32_awaddr[15]"/>
+        <net name="axim32_awaddr[14]"/>
+        <net name="axim32_awaddr[13]"/>
+        <net name="axim32_awaddr[12]"/>
+        <net name="axim32_awaddr[11]"/>
+        <net name="axim32_awaddr[10]"/>
+        <net name="axim32_awaddr[9]"/>
+        <net name="axim32_awaddr[8]"/>
+        <net name="axim32_awaddr[7]"/>
+        <net name="axim32_awaddr[6]"/>
+        <net name="axim32_awaddr[5]"/>
+        <net name="axim32_awaddr[4]"/>
+        <net name="axim32_awaddr[3]"/>
+        <net name="axim32_awaddr[2]"/>
+        <net name="axim32_awaddr[1]"/>
+        <net name="axim32_awaddr[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_awready"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_awvalid"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_rdata[31]"/>
+        <net name="axim32_rdata[30]"/>
+        <net name="axim32_rdata[29]"/>
+        <net name="axim32_rdata[28]"/>
+        <net name="axim32_rdata[27]"/>
+        <net name="axim32_rdata[26]"/>
+        <net name="axim32_rdata[25]"/>
+        <net name="axim32_rdata[24]"/>
+        <net name="axim32_rdata[23]"/>
+        <net name="axim32_rdata[22]"/>
+        <net name="axim32_rdata[21]"/>
+        <net name="axim32_rdata[20]"/>
+        <net name="axim32_rdata[19]"/>
+        <net name="axim32_rdata[18]"/>
+        <net name="axim32_rdata[17]"/>
+        <net name="axim32_rdata[16]"/>
+        <net name="axim32_rdata[15]"/>
+        <net name="axim32_rdata[14]"/>
+        <net name="axim32_rdata[13]"/>
+        <net name="axim32_rdata[12]"/>
+        <net name="axim32_rdata[11]"/>
+        <net name="axim32_rdata[10]"/>
+        <net name="axim32_rdata[9]"/>
+        <net name="axim32_rdata[8]"/>
+        <net name="axim32_rdata[7]"/>
+        <net name="axim32_rdata[6]"/>
+        <net name="axim32_rdata[5]"/>
+        <net name="axim32_rdata[4]"/>
+        <net name="axim32_rdata[3]"/>
+        <net name="axim32_rdata[2]"/>
+        <net name="axim32_rdata[1]"/>
+        <net name="axim32_rdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe6[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_rready"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe7[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_rvalid"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_wdata[31]"/>
+        <net name="axim32_wdata[30]"/>
+        <net name="axim32_wdata[29]"/>
+        <net name="axim32_wdata[28]"/>
+        <net name="axim32_wdata[27]"/>
+        <net name="axim32_wdata[26]"/>
+        <net name="axim32_wdata[25]"/>
+        <net name="axim32_wdata[24]"/>
+        <net name="axim32_wdata[23]"/>
+        <net name="axim32_wdata[22]"/>
+        <net name="axim32_wdata[21]"/>
+        <net name="axim32_wdata[20]"/>
+        <net name="axim32_wdata[19]"/>
+        <net name="axim32_wdata[18]"/>
+        <net name="axim32_wdata[17]"/>
+        <net name="axim32_wdata[16]"/>
+        <net name="axim32_wdata[15]"/>
+        <net name="axim32_wdata[14]"/>
+        <net name="axim32_wdata[13]"/>
+        <net name="axim32_wdata[12]"/>
+        <net name="axim32_wdata[11]"/>
+        <net name="axim32_wdata[10]"/>
+        <net name="axim32_wdata[9]"/>
+        <net name="axim32_wdata[8]"/>
+        <net name="axim32_wdata[7]"/>
+        <net name="axim32_wdata[6]"/>
+        <net name="axim32_wdata[5]"/>
+        <net name="axim32_wdata[4]"/>
+        <net name="axim32_wdata[3]"/>
+        <net name="axim32_wdata[2]"/>
+        <net name="axim32_wdata[1]"/>
+        <net name="axim32_wdata[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe8[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_wready"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe9[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="axim32_wvalid"/>
+      </nets>
+    </probe>
+  </probeset>
+</hwsession>

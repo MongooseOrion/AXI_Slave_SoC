@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 14 15:58:21 2022
+# Process ID: 11724
+# Current directory: C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11088 C:\Users\王海舟\Desktop\axi_slave_soc\axi_slave\axi_slave.xpr
+# Log file: C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave/vivado.log
+# Journal file: C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave/axi_slave.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1

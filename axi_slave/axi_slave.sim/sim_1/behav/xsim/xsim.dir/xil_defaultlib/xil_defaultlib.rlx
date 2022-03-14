@@ -1,0 +1,11 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/smn90/Desktop/axi_slave_soc/axi_slave/axi_slave.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/smn90/Desktop/axi_slave_soc/pll0/pll0.v,1625973528,verilog,,C:/Users/smn90/Desktop/axi_slave_soc/src/axi_bus_m32_bridge.v,,pll0,,,../../../../../pll0,,,,,
+C:/Users/smn90/Desktop/axi_slave_soc/pll0/pll0_clk_wiz.v,1625973526,verilog,,C:/Users/smn90/Desktop/axi_slave_soc/pll0/pll0.v,,pll0_clk_wiz,,,../../../../../pll0,,,,,
+C:/Users/smn90/Desktop/axi_slave_soc/sim/sim_top.v,1625976054,verilog,,,,sim_top,,,../../../../../pll0,,,,,
+C:/Users/smn90/Desktop/axi_slave_soc/src/axi_bus_m32_bridge.v,1611823100,verilog,,C:/Users/smn90/Desktop/axi_slave_soc/src/axi_slave.v,,axi_bus_m32_bridge,,,../../../../../pll0,,,,,
+C:/Users/smn90/Desktop/axi_slave_soc/src/axi_slave.v,1641987583,verilog,,C:/Users/smn90/Desktop/axi_slave_soc/src/soc_top.v,,axi_slave,,,../../../../../pll0,,,,,
+C:/Users/smn90/Desktop/axi_slave_soc/src/soc_top.v,1642058698,verilog,,C:/Users/smn90/Desktop/axi_slave_soc/sim/sim_top.v,,soc_top,,,../../../../../pll0,,,,,

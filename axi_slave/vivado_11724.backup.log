@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 14 15:58:21 2022
+# Process ID: 11724
+# Current directory: C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11088 C:\Users\王海舟\Desktop\axi_slave_soc\axi_slave\axi_slave.xpr
+# Log file: C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave/vivado.log
+# Journal file: C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave/axi_slave.xpr
+INFO: [Project 1-313] Project file moved from 'D:/axi_slave_soc/axi_slave' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/vivado/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'pll0' is locked:
+* IP definition 'Clocking Wizard (6.0)' for IP 'pll0' (customized with software release 2018.3) has a different revision in the IP Catalog.
+INFO: [Project 1-230] Project 'axi_slave.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:31 ; elapsed = 00:00:15 . Memory (MB): peak = 839.586 ; gain = 212.688
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Fri Jan 14 16:00:02 2022] Launched synth_1...
+Run output will be captured here: C:/Users/王海舟/Desktop/axi_slave_soc/axi_slave/axi_slave.runs/synth_1/runme.log
