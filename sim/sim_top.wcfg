@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sim_top_func_synth.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sim_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="33426025001fs"></ZoomEndTime>
+      <Cursor1Time time="29703244000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="193"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/sim_top/gclk" type="logic">
+      <obj_property name="ElementShortName">gclk</obj_property>
+      <obj_property name="ObjectShortName">gclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/sysclk" type="logic">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/sysrstn" type="logic">
+      <obj_property name="ElementShortName">sysrstn</obj_property>
+      <obj_property name="ObjectShortName">sysrstn</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider18">
+      <obj_property name="label">WADDR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/u_axi_slave/axis_awaddr" type="array">
+      <obj_property name="ElementShortName">axis_awaddr[27:0]</obj_property>
+      <obj_property name="ObjectShortName">axis_awaddr[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_awready" type="logic">
+      <obj_property name="ElementShortName">axim32_awready</obj_property>
+      <obj_property name="ObjectShortName">axim32_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_awvalid" type="logic">
+      <obj_property name="ElementShortName">axim32_awvalid</obj_property>
+      <obj_property name="ObjectShortName">axim32_awvalid</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider17">
+      <obj_property name="label">WDATA</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_wdata" type="array">
+      <obj_property name="ElementShortName">axim32_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">axim32_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_wvalid" type="logic">
+      <obj_property name="ElementShortName">axim32_wvalid</obj_property>
+      <obj_property name="ObjectShortName">axim32_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_wready" type="logic">
+      <obj_property name="ElementShortName">axim32_wready</obj_property>
+      <obj_property name="ObjectShortName">axim32_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_wlast" type="logic">
+      <obj_property name="ElementShortName">axim32_wlast</obj_property>
+      <obj_property name="ObjectShortName">axim32_wlast</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider19">
+      <obj_property name="label">B channel</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_bvalid" type="logic">
+      <obj_property name="ElementShortName">axim32_bvalid</obj_property>
+      <obj_property name="ObjectShortName">axim32_bvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_bready" type="logic">
+      <obj_property name="ElementShortName">axim32_bready</obj_property>
+      <obj_property name="ObjectShortName">axim32_bready</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider20">
+      <obj_property name="label">RADDR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_arvalid" type="logic">
+      <obj_property name="ElementShortName">axim32_arvalid</obj_property>
+      <obj_property name="ObjectShortName">axim32_arvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_arready" type="logic">
+      <obj_property name="ElementShortName">axim32_arready</obj_property>
+      <obj_property name="ObjectShortName">axim32_arready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_araddr" type="array">
+      <obj_property name="ElementShortName">axim32_araddr[27:0]</obj_property>
+      <obj_property name="ObjectShortName">axim32_araddr[27:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider21">
+      <obj_property name="label">RDATA</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_rdata" type="array">
+      <obj_property name="ElementShortName">axim32_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">axim32_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/axim32_rvalid" type="logic">
+      <obj_property name="ElementShortName">axim32_rvalid</obj_property>
+      <obj_property name="ObjectShortName">axim32_rvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/u_axi_slave/axim32_rready" type="logic">
+      <obj_property name="ElementShortName">axim32_rready</obj_property>
+      <obj_property name="ObjectShortName">axim32_rready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top/u_soc_0/u_axi_slave/axim32_rlast" type="logic">
+      <obj_property name="ElementShortName">axim32_rlast</obj_property>
+      <obj_property name="ObjectShortName">axim32_rlast</obj_property>
+   </wvobject>
+</wave_config>
